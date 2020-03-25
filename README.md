@@ -13,4 +13,4 @@ Matching Java Virtual Machines (3):
     1.8.0_202, x86_64:	"Amazon Corretto 8"	/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
 ```
 
-```$ export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_231```
+then you can ```$ export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_231```
