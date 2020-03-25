@@ -17,6 +17,9 @@ Matching Java Virtual Machines (3):
 
 then you can ```$ export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_231```
 
+
+### project
+
 - Create a Conda package
 1. `conda-build .` current package, with meta.yaml, build.sh included
 2. Conver to linux platform 
