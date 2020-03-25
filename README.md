@@ -1,11 +1,11 @@
 # random_fast_notes
 
-- SSH port forwarding for Redis
+- SSH port forwarding, Redis
 
-`ssh -L 6000:arteries-hot-events.yzirwe.clustercfg.use1.cache.amazonaws.com:6379 ec2-18-234-141-194.compute-1.amazonaws.com`
-`Redis-cli -p 5000`
+1. `ssh -L 6000:arteries-hot-events.yzirwe.clustercfg.use1.cache.amazonaws.com:6379 ec2-18-234-141-194.compute-  amazonaws.com`
+2. on another terminal `Redis-cli -p 6000`
 
-- Change local Java version
+- Change Java version on local
 ```$ /usr/libexec/java_home -V
 
 Matching Java Virtual Machines (3):
@@ -16,7 +16,7 @@ Matching Java Virtual Machines (3):
 
 then you can ```$ export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_231```
 
-- How to create a Conda package
+- Create a Conda package
 1. `conda-build .` current package, with meta.yaml, build.sh included
 2. Conver to linux platform 
 `conda convert --platform linux-64 ~/opt/anaconda3/conda-bld/osx-64/click-7.0-py37_0.tar.bz2 -o outputdir/`
