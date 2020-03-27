@@ -32,6 +32,7 @@ COPY environment.yaml /notebooks
 RUN /opt/conda/bin/conda env create -f environment.yaml
 RUN echo "source activate myenv" > ~/.bashrc
 ENV PATH /opt/conda/envs/myenv/bin:$PATH
+```
 
 ### project
 
@@ -43,7 +44,6 @@ ENV PATH /opt/conda/envs/myenv/bin:$PATH
 4. Move the contents to S3 bucket
 5. `conda install "$NAME_OF_PACKAGE" -c "$PATH_TO_S3"`
 
-```
 
 - SSH to bastion
 1. `ssh-add`
