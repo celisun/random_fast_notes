@@ -20,6 +20,11 @@ then you can ```$ export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_231```
 - Use a conda env in Docker (Dockerfile)
 
 ```
+## If you want to install python 3.7
+ARG PYTHON=python3.7
+RUN add-apt-repository ppa:deadsnakes/ppa && apt-get update && apt-get install -y python3.7
+RUN ln -sf /usr/bin/${PYTHON} /usr/local/bin/python3
+
 RUN curl -o ~/miniconda.sh -O  https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh  \
  && chmod +x ~/miniconda.sh \
  && ~/miniconda.sh -b -p /opt/conda \
