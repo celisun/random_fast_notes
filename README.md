@@ -28,6 +28,23 @@ then you can ```$ export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_231```
 4. Move the contents to S3 bucket
 5. `conda install "$NAME_OF_PACKAGE" -c "$PATH_TO_S3"`
 
+- Use a conda env in a Dockerfile 
+
+```
+RUN curl -o ~/miniconda.sh -O  https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh  \
+ && chmod +x ~/miniconda.sh \
+ && ~/miniconda.sh -b -p /opt/conda \
+ && rm ~/miniconda.sh \
+ && /opt/conda/bin/conda install aws-requests-auth -y -c conda-forge
+RUN /opt/conda/bin/conda clean -ya
+
+## activate myenv
+#COPY environment.yaml /notebooks
+RUN /opt/conda/bin/conda env create -f environment.yaml
+RUN echo "source activate myenv" > ~/.bashrc
+ENV PATH /opt/conda/envs/myenv/bin:$PATH
+```
+
 - SSH to bastion
 1. `ssh-add`
 2.  `ssh -A <bastion>`
